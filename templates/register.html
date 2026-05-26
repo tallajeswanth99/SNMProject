@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #141e30, #243b55);
+      padding: 20px;
+    }
+
+    /* Flash Message */
+
+    b {
+      position: absolute;
+      top: 20px;
+      background: #22c55e;
+      color: white;
+      padding: 12px 25px;
+      border-radius: 8px;
+      font-size: 15px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Form Card */
+
+    center {
+      width: 420px;
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(15px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 25px;
+      padding: 45px 40px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+    }
+
+    /* Heading */
+
+    h1 {
+      color: white;
+      font-size: 38px;
+      margin-bottom: 35px;
+      letter-spacing: 1px;
+    }
+
+    /* Labels */
+
+    label {
+      display: block;
+      text-align: left;
+      color: #e2e8f0;
+      font-size: 15px;
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+
+    /* Inputs */
+
+    input {
+      width: 100%;
+      padding: 14px 18px;
+      border: none;
+      outline: none;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      font-size: 15px;
+      background: rgba(255, 255, 255, 0.15);
+      color: white;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      transition: 0.3s;
+    }
+
+    input::placeholder {
+      color: #cbd5e1;
+    }
+
+    input:focus {
+      border: 1px solid #38bdf8;
+      background: rgba(255, 255, 255, 0.2);
+      box-shadow: 0 0 12px rgba(56, 189, 248, 0.4);
+    }
+
+    /* Submit Button */
+
+    button {
+      width: 100%;
+      padding: 15px;
+      border: none;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #38bdf8, #2563eb);
+      color: white;
+      font-size: 17px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.4s;
+      margin-top: 10px;
+      letter-spacing: 1px;
+    }
+
+    button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(37, 99, 235, 0.5);
+    }
+
+    /* Responsive */
+
+    @media(max-width:500px) {
+
+      center {
+        width: 100%;
+        padding: 35px 25px;
+      }
+
+      h1 {
+        font-size: 30px;
+      }
+
+    }
+  </style>
+</head>
+
+<body>
+
+  {% with messages = get_flashed_messages() %}
+  {% if messages %}
+  {% for message in messages %}
+  <b>{{ message }}</b>
+  {% endfor %}
+  {% endif %}
+  {% endwith %}
+  <center>
+    <h1>Register</h1>
+    <form method="post">
+      <label>Username</label>
+      <input type="text" name="username" placeholder="Enter username" /><br><br>
+      <label>Useremail</label>
+
+      <input type="email" name="useremail" placeholder="Enter useremail" /><br><br>
+      <label>Userpassword</label>
+
+      <input type="password" name="userpassword" placeholder="Enter userpassword" /><br><br>
+      <label>Userphone_no</label>
+
+      <input type="text" name="userphone_no" placeholder="Enter username" /><br><br>
+      <button>submit</button>
+    </form>
+  </center>
+</body>
+
+</html>

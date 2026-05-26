@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <style>
+      *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#141e30,#243b55);
+    padding:20px;
+}
+
+/* Flash Message */
+
+b{
+    position:absolute;
+    top:20px;
+    background:#22c55e;
+    color:white;
+    padding:12px 25px;
+    border-radius:10px;
+    font-size:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* Login Card */
+
+center:last-of-type{
+    width:400px;
+    background:rgba(255,255,255,0.12);
+    backdrop-filter:blur(15px);
+    border:1px solid rgba(255,255,255,0.15);
+    border-radius:25px;
+    padding:45px 35px;
+    box-shadow:0 8px 30px rgba(0,0,0,0.4);
+}
+
+/* Heading */
+
+center:first-of-type{
+    position:absolute;
+    top:100px;
+    color:white;
+    font-size:40px;
+    font-weight:700;
+    letter-spacing:1px;
+}
+
+/* Inputs */
+
+input{
+    width:100%;
+    padding:15px 18px;
+    border:none;
+    outline:none;
+    border-radius:14px;
+    margin-bottom:20px;
+    background:rgba(255,255,255,0.15);
+    color:white;
+    font-size:15px;
+    border:1px solid rgba(255,255,255,0.15);
+    transition:0.3s;
+}
+
+input::placeholder{
+    color:#d1d5db;
+}
+
+input:focus{
+    border:1px solid #38bdf8;
+    box-shadow:0 0 12px rgba(56,189,248,0.4);
+    background:rgba(255,255,255,0.2);
+}
+
+/* Button */
+
+button{
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:14px;
+    background:linear-gradient(135deg,#38bdf8,#2563eb);
+    color:white;
+    font-size:17px;
+    font-weight:600;
+    cursor:pointer;
+    transition:0.4s;
+    letter-spacing:1px;
+}
+
+button:hover{
+    transform:translateY(-3px);
+    box-shadow:0 8px 20px rgba(37,99,235,0.5);
+}
+
+/* Forgot Password */
+
+a{
+    display:inline-block;
+    margin-top:18px;
+    color:#93c5fd;
+    text-decoration:none;
+    font-size:15px;
+    transition:0.3s;
+}
+
+a:hover{
+    color:white;
+    text-decoration:underline;
+}
+
+/* Responsive */
+
+@media(max-width:500px){
+
+    center:last-of-type{
+        width:100%;
+        padding:35px 25px;
+    }
+
+    center:first-of-type{
+        font-size:32px;
+    }
+
+}
+    </style>
+</head>
+<body>
+    <center>login</center>
+    {% with messages = get_flashed_messages() %}
+  {% if messages %}
+    {% for message in messages %}
+      <b>{{ message }}</b>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+     <center>
+        <form method="post">
+        <input type="email" name="useremail" placeholder="Enter useremail"/><br><br>
+        <input type="password" name="userpassword" placeholder="Enter userpassword"/><br><br>
+        <button>submit</button>
+     </form>
+     <a href="{{url_for('forgot')}}">forgotpassword</a>
+     </center>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Google Font Style Feel */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+/* Background */
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(to right,#141e30,#243b55);
+}
+
+/* Card */
+center{
+    background:rgba(255,255,255,0.1);
+    backdrop-filter:blur(12px);
+    padding:60px 50px;
+    border-radius:25px;
+    border:1px solid rgba(255,255,255,0.2);
+    box-shadow:0 8px 25px rgba(0,0,0,0.4);
+    width:420px;
+}
+
+/* Heading */
+h1{
+    color:white;
+    font-size:34px;
+    margin-bottom:40px;
+    line-height:1.4;
+}
+
+/* Buttons */
+button{
+    width:220px;
+    padding:15px;
+    margin:10px 0;
+    border:none;
+    border-radius:50px;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.4s;
+    letter-spacing:1px;
+}
+
+/* Register Button */
+a:first-of-type button{
+    background:#00c6ff;
+    color:white;
+    box-shadow:0 5px 15px rgba(0,198,255,0.5);
+}
+
+/* Login Button */
+a:last-of-type button{
+    background:#ff416c;
+    color:white;
+    box-shadow:0 5px 15px rgba(255,65,108,0.5);
+}
+
+/* Hover Effects */
+button:hover{
+    transform:translateY(-5px) scale(1.03);
+    opacity:0.9;
+}
+
+/* Remove Link Underline */
+a{
+    text-decoration:none;
+}
+    </style>
+</head>
+
+<body>
+    <center>
+        <h1>Welcome to Simple Notes Management App</h1>
+        <a href="{{url_for('register')}}"><button>Register</button></a><br><br>
+        <a href="{{url_for('login')}}"><button>Login</button></a>
+    </center>
+</body>
+
+</html>
